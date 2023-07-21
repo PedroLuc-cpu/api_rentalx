@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/categories", categoriesRoutes);
-app.use("/categoriesAll", categoriesRoutes);
+//app.use("/categoriesAll", categoriesRoutes);
 
 //specifications
 app.use("/specifications", specificationRoutes);
