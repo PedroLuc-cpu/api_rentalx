@@ -1,11 +1,11 @@
 import { Category } from "../../model/Category";
-import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
+import { ICategoriesRepository } from "../../repositories/implementations/ICategoriesRepository";
 
 
 class LisCategoriesUseCase {
  constructor(private categoriesRepository: ICategoriesRepository) { }
 
- execute():Category[] {
+ execute(): Category[] {
   const categories = this.categoriesRepository.list()
   return categories
  }
