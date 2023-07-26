@@ -12,7 +12,7 @@ class CreateCategoryUseCase {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name)
 
     if (categoryAlreadyExists) {
-      throw new Error("Cato category already exists")
+      throw new Error("(CreateCategoryUseCase) - Cato category already exists")
     }
 
     return this.categoriesRepository.create({ name, description })
