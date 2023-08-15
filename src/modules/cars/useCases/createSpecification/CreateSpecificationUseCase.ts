@@ -10,15 +10,16 @@ interface IRequest {
 class CreateSpecificationUseCase {
   constructor(
     @inject("SpecificationRepository")
-    private specificationRepository: ISpecificationRepository) { }
-  execute({ name, description }: IRequest): void {
-    const specificationAlreadyExists = this.specificationRepository.findByName(name);
+    private SpecificationRepository: ISpecificationRepository) { }
+  async execute({ name, description }: IRequest): Promise<void> {
+    const specificationAlreadyExists = await this.SpecificationRepository.findByName(name);
 
     if (specificationAlreadyExists) {
-      throw new Error("Specification already exists");
+      throw new Error("(CreateSpecificationUseCase) - Cato category already exists");
     }
 
-    this.specificationRepository.create({ name, description })
+    return this.SpecificationRepository.create({ name, description })
+
   }
 }
 
