@@ -47,7 +47,7 @@ class AuthenticateUserUseCase {
    token,
    user: {
     name: user.name,
-    email: user.emaile
+    email: user.email
    }
   }
 
