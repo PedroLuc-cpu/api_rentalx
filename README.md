@@ -5,23 +5,23 @@ Metodos usado:
 GET --->>
 
 **obter categorias criadas
-http://localhost:<PORTA>/categories
+http://localhost:SUAPORTA/categories
 
 
 **obter specificões criadas
-http://localhost:<PORTA>/specifications
+http://localhost:SUAPORTA/specifications
 
 
 POST --->>
 
 **cadatrar categorias
-http://localhost:<PORTA>/categories
+http://localhost:SUAPORTA/categories
 
 **cadatrar specificões
-http://localhost:3333/specifications
+http://localhost:SUAPORTA/specifications
 
 **cadatrar usuário
-http://localhost:3333/users
+http://localhost:SUAPORTA/users
 
 **realizar o post da authenticação
-http://localhost:<PORTA>/sessions
+http://localhost:SUAPORTA/sessions
