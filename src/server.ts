@@ -4,16 +4,10 @@ import swaggerFile from './swagger.json';
 
 import "./database"
 import "./shared/conteiner"
-
-import { categoriesRoutes } from "./Routes/categories.routes";
-import { specificationRoutes } from "./Routes/specifications.routes";
+import { router } from "./Routes";
 
 const app = express();
 app.use(express.json());
+app.use(router)
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile))
-
-app.use("/categories", categoriesRoutes);
-//specifications
-app.use("/specifications", specificationRoutes);
-
 app.listen(3333, () => console.log('listening'));
