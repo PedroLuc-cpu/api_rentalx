@@ -1,3 +1,4 @@
+import { AppError } from "../../../../errors/AppError";
 import { ISpecificationRepository } from "../../repositories/implementations/ISpecificationRepository";
 import { inject, injectable } from "tsyringe";
 
@@ -15,7 +16,7 @@ class CreateSpecificationUseCase {
     const specificationAlreadyExists = await this.SpecificationRepository.findByName(name);
 
     if (specificationAlreadyExists) {
-      throw new Error("(CreateSpecificationUseCase) - Cato category already exists");
+      throw new AppError("(CreateSpecificationUseCase) - Cato category already exists");
     }
 
     return this.SpecificationRepository.create({ name, description })
