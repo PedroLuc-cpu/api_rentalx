@@ -12,7 +12,7 @@ export async function ensureAuthenticated(request: Request, response: Response, 
  const authHeader = request.headers.authorization;
 
  if (!authHeader) {
-  throw new AppError("Token missing" , 401)
+  throw new AppError("Token missing", 401)
  }
 
  //Bearer authentication
@@ -23,10 +23,14 @@ export async function ensureAuthenticated(request: Request, response: Response, 
   const { sub: user_id } = verify(token, "c10a1f8f263acdffbb48fe894fca4b43") as IPayload;
 
   const usersRespositoty = new UserRepository()
-  const users = await usersRespositoty.findById(user_id);
+  const user = await usersRespositoty.findById(user_id);
 
-  if (!users) {
+  if (!user) {
    throw new AppError("User does not exist!", 401);
+  }
+
+  request.user = {
+   id: user_id
   }
 
   next();
