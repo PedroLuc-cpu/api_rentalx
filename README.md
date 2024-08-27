@@ -25,3 +25,8 @@ http://localhost:SUAPORTA/users
 
 **realizar o post da authenticação
 http://localhost:SUAPORTA/sessions
+
+** comando util do TypeORM
+
+** criar um arquivo migratin
+-> npx typeorm migration:create src/database/migrations/"nomedaMigrations"

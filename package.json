@@ -6,7 +6,8 @@
   "scripts": {
     "start": " nodemon dist/server.js",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+    "migrate": "ts-node-dev ./node_modules/typeorm/cli migration:run -d src/database/index.ts"
   },
   "keywords": [],
   "author": "",
